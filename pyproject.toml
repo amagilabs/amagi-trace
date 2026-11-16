@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amagi-trace"
+version = "0.1.0"
+description = "Turn a Playwright trace.zip (or a whole test-results/ folder) into one markdown file per failed test: step list, failing locator and assertion, console errors, failed network calls, page DOM text and screenshot. Built so Claude Code or Codex can fix a red CI run without opening the trace viewer."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "AmagiLabs (Amagisolutionsgroup, Inc.)", email = "dev@amagisolutionsgroup.com" }]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["playwright", "trace", "e2e", "testing", "ci", "llm", "claude-code", "markdown", "flaky-tests", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/amagilabs/amagi-trace"
+
+[project.scripts]
+amagi-trace = "amagi_trace.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
