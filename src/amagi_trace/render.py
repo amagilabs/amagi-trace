@@ -25,7 +25,7 @@ class Options:
 @dataclass
 class Rendered:
     markdown: str
-    test_name: str
+    test_title: str
     location: str
     status: str
     error_head: str
@@ -34,7 +34,7 @@ class Rendered:
     extras: dict = field(default_factory=dict)
 
 
-def test_name(t: Trace) -> str:
+def title_of(t: Trace) -> str:
     title = t.title or ""
     m = re.match(r"^(\S+?):(\d+)\s+\S+\s+(.*)$", title)
     if m:
@@ -198,7 +198,7 @@ def _adjacent_screenshot(trace_path: str) -> Optional[str]:
 
 def render(t: Trace, opts: Optional[Options] = None) -> Rendered:
     opts = opts or Options()
-    name = test_name(t)
+    name = title_of(t)
     failing = _failing_step(t)
     status = "FAILED" if t.failed else "PASSED"
     msg = t.test_error or (failing.error if failing else "") or ""

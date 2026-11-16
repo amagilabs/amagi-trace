@@ -114,7 +114,7 @@ def main(argv: Optional[list] = None) -> int:
     taken: set = set()
     index = ["# Playwright failures", "", f"{len(selected)} of {len(results)} trace(s) written by amagi-trace {__version__}.", ""]
     for t, r in selected:
-        slug = slugify(r.test_name, taken)
+        slug = slugify(r.test_title, taken)
         text = r.markdown
         if r.screenshot_src and not args.no_screenshots:
             kind, ref = r.screenshot_src
@@ -132,13 +132,13 @@ def main(argv: Optional[list] = None) -> int:
                 text += f"\n## Screenshot\n\n![screenshot at failure]({slug}/screenshot{r.screenshot_ext})\n"
         with open(os.path.join(args.out, slug + ".md"), "w", encoding="utf-8") as f:
             f.write(text)
-        index.append(f"- [{r.status}] [{r.test_name}]({slug}.md)" + (f" `{r.location}`" if r.location else "") + (f": {r.error_head}" if r.error_head else ""))
+        index.append(f"- [{r.status}] [{r.test_title}]({slug}.md)" + (f" `{r.location}`" if r.location else "") + (f": {r.error_head}" if r.error_head else ""))
     with open(os.path.join(args.out, "index.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(index) + "\n")
     print(f"amagi-trace: read {len(results)} trace(s): {len(results) - n_pass} failed, {n_pass} passed"
           + (f", {skipped} skipped" if skipped else "") + f". Wrote {len(selected)} file(s) to {args.out}/")
     for t, r in selected:
-        print(f"  [{r.status}] {r.test_name}: {r.error_head[:100]}")
+        print(f"  [{r.status}] {r.test_title}: {r.error_head[:100]}")
     return 0
 
 
