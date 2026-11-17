@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "amagi-trace"
 version = "0.1.0"
-description = "Turn a Playwright trace.zip (or a whole test-results/ folder) into one markdown file per failed test: step list, failing locator and assertion, console errors, failed network calls, page DOM text and screenshot. Built so Claude Code or Codex can fix a red CI run without opening the trace viewer."
+description = "Turn a failed Playwright run (trace.zip or test-results/) into markdown your AI agent can read: steps, failing locator, console errors, failed network calls and the page at failure."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
