@@ -65,10 +65,10 @@ def test_target_marker_and_summary():
 
 
 def test_input_values_and_links():
-    root = ["BODY", {}, ["INPUT", {"type": "email", "placeholder": "you@x.co", "__playwright_value_": "a@b.co"}],
+    root = ["BODY", {}, ["INPUT", {"type": "email", "placeholder": "your email", "__playwright_value_": "buyer-one"}],
             ["A", {"href": "/help"}, "Help"], ["INPUT", {"type": "checkbox", "__playwright_checked_": "true"}]]
     out = render_text(root)
-    assert "value='a@b.co'" in out[0]
+    assert "value='buyer-one'" in out[0]
     assert out[1] == "[link] Help -> /help"
     assert "checked=true" in out[2]
 

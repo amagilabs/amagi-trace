@@ -55,7 +55,7 @@ The report for the first test says what Playwright could not say in one line. Th
 - Target element: `<p id="status">Error 500</p>`
 
 # Checkout
-[input] type=email placeholder='you@example.com' value='a@b.co'
+[input] type=email placeholder='you@example.com' value='buyer-one'
 Email
 [button] Pay now
 Error 500   <-- TARGET

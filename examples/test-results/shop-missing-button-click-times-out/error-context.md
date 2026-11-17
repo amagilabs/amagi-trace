@@ -41,7 +41,7 @@ Call log:
   4  | test('checkout shows confirmation', async ({ page }) => {
   5  |   await page.route('https://shop.test/api/charge', r => r.fulfill({ status: 500, body: 'boom', headers: {'access-control-allow-origin': '*'} }));
   6  |   await page.goto(url);
-  7  |   await page.getByPlaceholder('you@example.com').fill('a@b.co');
+  7  |   await page.getByPlaceholder('you@example.com').fill('buyer-one');
   8  |   await page.getByRole('button', { name: 'Pay now' }).click();
   9  |   await expect(page.locator('#status')).toHaveText('Payment confirmed', { timeout: 2000 });
   10 | });

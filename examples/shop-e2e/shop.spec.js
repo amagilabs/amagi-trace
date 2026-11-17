@@ -4,7 +4,7 @@ const url = require('url').pathToFileURL(path.resolve(__dirname, 'page.html')).h
 test('checkout shows confirmation', async ({ page }) => {
   await page.route('https://shop.test/api/charge', r => r.fulfill({ status: 500, body: 'boom', headers: {'access-control-allow-origin': '*'} }));
   await page.goto(url);
-  await page.getByPlaceholder('you@example.com').fill('a@b.co');
+  await page.getByPlaceholder('you@example.com').fill('buyer-one');
   await page.getByRole('button', { name: 'Pay now' }).click();
   await expect(page.locator('#status')).toHaveText('Payment confirmed', { timeout: 2000 });
 });
