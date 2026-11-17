@@ -23,7 +23,8 @@ set `trace: 'retain-on-failure'` (or `'on-first-retry'`) in `playwright.config`.
 
 ## How to use it
 
-Install once: `pipx install amagi-trace` (or `pip install -e .` from this repo).
+Install once: `pipx install amagi-trace`, or from source with
+`pipx install git+https://github.com/amagilabs/amagi-trace` (or `pip install -e .` from this repo).
 
 ```bash
 amagi-trace test-results/                  # writes ./trace-md/index.md + one .md per failed test

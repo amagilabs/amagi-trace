@@ -12,6 +12,8 @@ When you ask Claude Code or Codex to fix a failing E2E test, it usually sees a s
 pipx install amagi-trace
 ```
 
+Or from source: `pipx install git+https://github.com/amagilabs/amagi-trace`.
+
 Python 3.9 or newer. No dependencies. It reads the finished trace files only; it never starts Playwright or a browser.
 
 ## Usage
@@ -95,7 +97,7 @@ If this saved you time, a star helps others find it.
 ## More from AmagiLabs
 
 - [amagilabs](https://github.com/amagilabs): other small open source tools from the same lab.
-- [amagi-logsift](https://github.com/amagilabs/amagi-logsift): shrink a huge log file into a ranked list of message templates small enough to paste into an LLM.
+- [amagi-site-diff](https://github.com/amagilabs/amagi-site-diff): crawl two versions of a site with Playwright and write pixel and text diffs an AI agent can read.
 - [amagi-env-check](https://github.com/amagilabs/amagi-env-check): diff `.env`, `.env.example` and your live environment without printing a value.
 - [amagi-skill-lint](https://github.com/amagilabs/amagi-skill-lint): lint Claude Code SKILL.md and subagent files.
 - [amagi-mcp-probe](https://github.com/amagilabs/amagi-mcp-probe): smoke-test an MCP server's tools in CI.
