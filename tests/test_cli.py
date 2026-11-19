@@ -82,4 +82,4 @@ def test_bad_file_exit_2(tmp_path, capsys):
 def test_module_entry_point(results_dir, tmp_path):
     env = dict(os.environ, PYTHONPATH=os.path.join(os.path.dirname(__file__), "..", "src"))
     r = subprocess.run([sys.executable, "-m", "amagi_trace", "--version"], capture_output=True, text=True, env=env)
-    assert r.returncode == 0 and "amagi-trace 0.1.0" in r.stdout
+    assert r.returncode == 0 and "amagi-trace 0.1.1" in r.stdout

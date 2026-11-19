@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "amagi-trace"
-version = "0.1.0"
+version = "0.1.1"
 description = "Turn a failed Playwright run (trace.zip or test-results/) into markdown your AI agent can read: steps, failing locator, console errors, failed network calls and the page at failure."
 readme = "README.md"
 license = "MIT"
